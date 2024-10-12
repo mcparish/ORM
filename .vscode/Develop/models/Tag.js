@@ -1,6 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection.js');
 
+// Import the Product model
+const Product = require('./Product'); // Adjust the path as necessary
+
 class Tag extends Model { }
 
 Tag.init(
@@ -13,6 +16,7 @@ Tag.init(
     },
     tag_name: {
       type: DataTypes.STRING,
+      allowNull: false,
     },
   },
   {
